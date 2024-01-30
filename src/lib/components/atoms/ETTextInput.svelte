@@ -1,7 +1,7 @@
 <script lang="ts">
     import type { InputType } from "../../../types/component";
 
-    type Round = "left" | "right";
+    type Round = "left" | "right" | "none";
 
     export let placeholder = "";
     export let name = "";
@@ -15,9 +15,11 @@
     $: roundedClass = "";
 
     $: if (round === "left") {
-        roundedClass = "rounded-r-0";
+        roundedClass = "rounded-l-lg";
     } else if (round === "right") {
-        roundedClass = "rounded-l-0";
+        roundedClass = "rounded-r-lg";
+    } else if (round === "none") {
+        roundedClass = "rounded-none";
     }
 </script>
 
@@ -27,8 +29,8 @@
     {id}
     {name}
     {...{ type }}
-    class="{hasBorder ? 'border' : ''} w-full p-1 {isRounded
+    class="{hasBorder ? 'border' : ''} text-sm w-full p-1 {isRounded
         ? 'rounded-lg'
-        : ''} {roundedClass}"
+        : ''} {roundedClass} focus:outline focus:outline-primary outline-2 text-primary"
     on:input
 />

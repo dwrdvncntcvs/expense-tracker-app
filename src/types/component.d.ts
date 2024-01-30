@@ -34,4 +34,33 @@ type Color =
     | "warning"
     | "failure";
 
-export { Column, Size, InputType, Color };
+type ButtonType = "button" | "submit";
+
+type Color =
+    | "primary"
+    | "secondary"
+    | "tertiary"
+    | "quaternary"
+    | "success"
+    | "failure"
+    | "warning"
+    | "light";
+
+interface ColorClass {
+    [key: string]: string;
+}
+
+type ButtonRound = Size | "xxl" | "xxxl";
+
+type Width = Size | "full" | "none";
+
+export {
+    Column,
+    Size,
+    InputType,
+    Color,
+    ButtonType,
+    ColorClass,
+    Width,
+    ButtonRound,
+};

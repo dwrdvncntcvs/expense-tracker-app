@@ -1,7 +1,6 @@
 <script lang="ts">
     import EtTextInput from "../atoms/ETTextInput.svelte";
     import type { IconSource } from "svelte-hero-icons";
-    import { Icon } from "svelte-hero-icons";
     import type { InputType } from "../../../types/component";
     import EtIcon from "../atoms/EtIcon.svelte";
 
@@ -18,9 +17,10 @@
     export let placeholder = "";
     export let type: InputType = "text";
     export let id = "";
+    export let isInputRounded = true;
 </script>
 
-<div class="flex bg-inherit border rounded-lg">
+<div class="flex bg-inherit border rounded-lg w-full">
     <div class="flex items-center px-4">
         <slot />
     </div>
@@ -33,10 +33,14 @@
         {name}
         {type}
         on:input
-        round="right"
+        round={isInputRounded ? "right" : "none"}
     />
     {#if buttonOpts?.has}
-        <button on:click={buttonOpts?.onClick} class="flex items-center px-4">
+        <button
+            on:click={buttonOpts?.onClick}
+            class="flex items-center px-4"
+            type="button"
+        >
             {#if buttonOpts?.icon}
                 <EtIcon src={buttonOpts?.icon} size="20" dimension="sm" />
             {/if}
