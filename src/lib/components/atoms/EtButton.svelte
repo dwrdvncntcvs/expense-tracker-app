@@ -32,6 +32,7 @@
         xl: "rounded-xl",
         xxl: "rounded-2xl",
         xxxl: "rounded-3xl",
+        full: "rounded-full",
     };
 
     $: colorClass = {
@@ -53,7 +54,7 @@
     };
 
     $: widthClass = {
-        none: "w-auto",
+        none: "",
         xs: "w-20",
         sm: "w-32",
         md: "w-40",
@@ -70,5 +71,5 @@
     ]} {roundClass[round]} {fontSizeClass[fontSize]} {className}"
     on:click
 >
-    <slot /></button
->
+    <slot />
+</button>

@@ -50,7 +50,7 @@ interface ColorClass {
     [key: string]: string;
 }
 
-type ButtonRound = Size | "xxl" | "xxxl";
+type ButtonRound = Size | "xxl" | "xxxl" | "full";
 
 type Width = Size | "full" | "none";
 
