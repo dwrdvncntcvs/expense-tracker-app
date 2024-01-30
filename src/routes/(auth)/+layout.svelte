@@ -2,6 +2,7 @@
     import EtContent from "$lib/components/layouts/EtContent.svelte";
     import { page } from "$app/stores";
     import EtButton from "$lib/components/atoms/EtButton.svelte";
+    import { goto } from "$app/navigation";
 
     interface Link {
         [key: string]: {
@@ -15,7 +16,7 @@
             "/sign-up": "Doesn't have an account yet?",
         },
         "sign-up": {
-            "/sig-in": "Already have an account?",
+            "/sign-in": "Already have an account?",
         },
     } as Link;
 
@@ -33,7 +34,7 @@
                         <EtButton
                             color="light"
                             on:click={() => {
-                                console.log("K Key: ", kKey);
+                                goto(kKey);
                             }}
                         >
                             {links[lKey][kKey]}

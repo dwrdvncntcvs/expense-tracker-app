@@ -21,7 +21,7 @@
 </script>
 
 <div class="flex bg-inherit border rounded-lg w-full">
-    <div class="flex items-center px-4">
+    <div class="flex items-center px-2">
         <slot />
     </div>
     <EtTextInput
@@ -38,7 +38,7 @@
     {#if buttonOpts?.has}
         <button
             on:click={buttonOpts?.onClick}
-            class="flex items-center px-4"
+            class="flex items-center px-2"
             type="button"
         >
             {#if buttonOpts?.icon}

@@ -35,6 +35,7 @@
         bind:value={authData["password"]}
         placeholder="Password"
         type={shouldShowPassword ? "text" : "password"}
+        isInputRounded={false}
         buttonOpts={{
             has: true,
             icon: shouldShowPassword ? EyeSlash : Eye,
@@ -42,7 +43,6 @@
                 shouldShowPassword = !shouldShowPassword;
             },
         }}
-        isInputRounded={false}
     >
         <EtIcon src={Key} dimension="sm" />
     </EtGroupTextInput>
