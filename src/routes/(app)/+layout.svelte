@@ -3,7 +3,9 @@
     import EtNavigation from "$lib/components/organisms/EtNavigation.svelte";
 </script>
 
-<EtContent>
+<EtContent size="md">
     <EtNavigation />
-    <slot />
+    <EtContent size="full" className="py-4">
+        <slot />
+    </EtContent>
 </EtContent>

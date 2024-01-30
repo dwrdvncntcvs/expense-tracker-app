@@ -1,6 +1,25 @@
 <script lang="ts">
+    import type { Width } from "../../../types/component";
+
+    export let size: Width = "full";
+    export let hasPadding = false;
+    export let className = "";
+
+    $: widthClass = {
+        xs: "w-[800px]",
+        sm: "w-[800px]",
+        md: "w-[1000px]",
+        lg: "w-[1200px]",
+        xl: "w-[1400px]",
+        full: "w-full",
+        none: "w-full",
+    };
 </script>
 
-<div class="flex flex-col h-screen max-w-[1000px] mx-auto">
+<div
+    class="flex flex-col h-screen {hasPadding ? 'px-4' : ''} {widthClass[
+        size
+    ]} mx-auto {className}"
+>
     <slot />
 </div>

@@ -63,7 +63,7 @@
     ];
 </script>
 
-<div class="h-16 flex items-center justify-between bg-white">
+<div class="sticky top-0 h-16 flex items-center justify-between bg-white">
     <img src="/logo/1.svg" alt="" class="w-14 h-14" />
     <div class="flex gap-4">
         {#each navigationList as nl, i (i)}
