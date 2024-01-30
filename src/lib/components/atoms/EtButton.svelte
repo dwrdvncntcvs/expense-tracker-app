@@ -14,6 +14,7 @@
     export let color: Color = "primary";
     export let fontSize: Size = "sm";
     export let width: Width = "full";
+    export let className = "";
 
     $: paddingClass = {
         xs: "p-1",
@@ -66,7 +67,7 @@
     {...{ type }}
     class="{colorClass[color]} {widthClass[width]} {paddingClass[
         padding
-    ]} {roundClass[round]} {fontSizeClass[fontSize]}"
+    ]} {roundClass[round]} {fontSizeClass[fontSize]} {className}"
     on:click
 >
     <slot /></button

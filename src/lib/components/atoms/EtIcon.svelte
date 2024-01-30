@@ -9,6 +9,7 @@
     export let src: IconSource;
     export let size = "";
     export let dimension: IconDimension = "default";
+    export let solid = false;
 
     export let color: Color = "primary";
 
@@ -19,4 +20,9 @@
     };
 </script>
 
-<Icon {src} {size} class="{dimensionClass[dimension]} {textColors[color]}" />
+<Icon
+    {src}
+    {size}
+    class="{dimensionClass[dimension]} {textColors[color]}"
+    {solid}
+/>
