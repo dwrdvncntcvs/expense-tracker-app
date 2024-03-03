@@ -5,6 +5,7 @@
     export let hasPadding = false;
     export let className = "";
     export let isHeightScreen = false;
+    export let hasGap = false;
 
     $: widthClass = {
         xs: "w-[800px]",
@@ -18,9 +19,11 @@
 </script>
 
 <div
-    class="flex flex-col {isHeightScreen ? 'h-screen' : 'h-full'} {hasPadding
-        ? 'px-4'
-        : ''} {widthClass[size]} mx-auto {className}"
+    class="flex flex-col {hasGap ? 'gap-4' : ''} {isHeightScreen
+        ? 'h-screen'
+        : 'h-full'} {hasPadding ? 'px-4' : ''} {widthClass[
+        size
+    ]} mx-auto {className}"
 >
     <slot />
 </div>

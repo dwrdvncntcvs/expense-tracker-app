@@ -1,5 +1,5 @@
 <script lang="ts">
-    import { goto } from "$app/navigation";
+    import { afterNavigate, goto } from "$app/navigation";
     import { page } from "$app/stores";
     import EtText from "$lib/components/atoms/ETText.svelte";
     import EtButton from "$lib/components/atoms/EtButton.svelte";
@@ -26,10 +26,19 @@
 
     let activeNav: string = "";
 
-    $: pathname = $page.url.pathname.split("/");
-    $: slug = pathname[pathname.length - 1];
+    const setActiveNav = () => {
+        let pathname = $page.url.pathname.split("/");
+        let slug = pathname[pathname.length - 1];
+        if (slug !== "settings") activeNav = slug;
+    };
 
-    $: if (slug !== "settings") activeNav = slug;
+    onMount(() => {
+        setActiveNav();
+    });
+
+    afterNavigate(() => {
+        setActiveNav();
+    });
 
     const settingsNav: SettingsNav[] = [
         {
@@ -111,7 +120,7 @@
         </ul>
     </nav>
 
-    <EtContent size="full">
+    <EtContent size="full" hasGap>
         <slot />
     </EtContent>
 </div>

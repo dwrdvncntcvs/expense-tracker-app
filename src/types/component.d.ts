@@ -14,6 +14,8 @@ type Column =
 
 type Size = "xs" | "sm" | "md" | "lg" | "xl";
 
+type TextSize = Size | "xxl" | "xxxl"
+
 type InputType =
     | "color"
     | "date"
@@ -65,5 +67,6 @@ export {
     ButtonRound,
     Dimension,
     Position,
-    FontWeight
+    FontWeight,
+    TextSize
 };

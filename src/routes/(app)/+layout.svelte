@@ -14,7 +14,8 @@
             const response = await request.get(
                 endpoint.usersEndpoint("/isAuthenticated")
             );
-            if (response.ok) setUser(response.data);
+
+            if (response.ok) setUser(response.data.user);
 
             if (!response.ok) goto("/sign-in");
         };

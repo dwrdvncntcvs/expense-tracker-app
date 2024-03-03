@@ -29,7 +29,7 @@
     {id}
     {name}
     {...{ type }}
-    class="{hasBorder ? 'border' : ''} text-sm w-full p-1 px-2 {isRounded
+    class="{hasBorder ? 'border' : ''} text-sm w-full p-1 px-2 h-10 {isRounded
         ? 'rounded-lg'
         : ''} {roundedClass} focus:outline focus:outline-primary outline-2 text-primary"
     on:input

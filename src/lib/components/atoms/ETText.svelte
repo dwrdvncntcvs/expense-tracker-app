@@ -1,7 +1,7 @@
 <script lang="ts">
-    import type { Color, FontWeight, Size } from "../../../types/component";
+    import type { Color, FontWeight, TextSize } from "../../../types/component";
 
-    export let size: Size = "sm";
+    export let size: TextSize = "sm";
     export let fontWeight: FontWeight = "normal";
     export let color: Color = "normal";
     export let className: string = "";
@@ -12,6 +12,8 @@
         md: "text-md",
         lg: "text-lg",
         xl: "text-xl",
+        xxl: "text-2xl",
+        xxxl: "text-3xl",
     };
 
     $: fontWeightClass = {
