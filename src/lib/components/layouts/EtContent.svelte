@@ -4,6 +4,7 @@
     export let size: Width = "full";
     export let hasPadding = false;
     export let className = "";
+    export let isHeightScreen = false;
 
     $: widthClass = {
         xs: "w-[800px]",
@@ -17,9 +18,9 @@
 </script>
 
 <div
-    class="flex flex-col h-screen {hasPadding ? 'px-4' : ''} {widthClass[
-        size
-    ]} mx-auto {className}"
+    class="flex flex-col {isHeightScreen ? 'h-screen' : 'h-full'} {hasPadding
+        ? 'px-4'
+        : ''} {widthClass[size]} mx-auto {className}"
 >
     <slot />
 </div>
