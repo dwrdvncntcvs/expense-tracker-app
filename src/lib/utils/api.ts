@@ -2,7 +2,7 @@ import { BASE_API } from "$lib/constants";
 import { Axios } from "axios";
 
 const axiosInstance = new Axios({
-    baseURL: BASE_API, headers: {
+    baseURL: BASE_API, withCredentials: true, headers: {
         "Content-Type": "application/json"
     }
 })
@@ -31,3 +31,26 @@ export const request = {
     delete: async (endpoint: string) =>
         await apiRequest("delete", endpoint)
 }
+
+export type BaseEndpoint = "usersEndpoint" | "expensesEndpoint" | "categoriesEndpoint"
+const basedEndpoints = ['users', 'expenses', "categories"]
+
+const generateEndpoints = (baseEndpoint: BaseEndpoint) => (endpoint: string) => {
+    return `${baseEndpoint}${endpoint}`
+}
+
+export type Endpoint = {
+    [x in BaseEndpoint]: (endpoint: string) => string;
+};
+
+let endpoint: Endpoint = {
+    categoriesEndpoint: (endpoint: string) => "",
+    expensesEndpoint: (endpoint: string) => "",
+    usersEndpoint: (endpoint: string) => ""
+};
+
+for (let x of basedEndpoints) {
+    endpoint = Object.defineProperty(endpoint, `${x}Endpoint`, { value: generateEndpoints(x as BaseEndpoint), writable: false })
+}
+
+export default endpoint
