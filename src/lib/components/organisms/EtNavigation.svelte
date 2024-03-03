@@ -7,6 +7,7 @@
     import EtIcon from "../atoms/EtIcon.svelte";
     import EtButtonMenu from "./EtButtonMenu.svelte";
     import type { ButtonMenuOption } from "../../../types/button";
+    import { addModal } from "$lib/states/modal";
 
     interface Navigation {
         name: string;
@@ -22,7 +23,7 @@
             type: "button",
             icon: PlusCircle,
             onClick: () => {
-                console.log("Add Expense");
+                addModal("add-expense-modal", {});
             },
         },
         {

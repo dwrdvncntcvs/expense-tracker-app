@@ -2,6 +2,7 @@
     import { Plus } from "svelte-hero-icons";
     import EtButton from "../atoms/EtButton.svelte";
     import EtIcon from "../atoms/EtIcon.svelte";
+    import { addModal } from "$lib/states/modal";
 </script>
 
 <div class="fixed right-20 bottom-10">
@@ -10,7 +11,7 @@
         className="w-20 h-20 flex items-center justify-center"
         round="full"
         on:click={() => {
-            console.log("Create Expense");
+            addModal("add-expense-modal", {});
         }}
     >
         <EtIcon src={Plus} dimension="lg" color="light" />

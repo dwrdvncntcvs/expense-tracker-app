@@ -4,6 +4,8 @@
 
     let isMenuOpen = false;
 
+    export let menuElement: HTMLDivElement | undefined = undefined;
+
     export let options: ButtonMenuOption[] = [];
     export let buttonProps: ButtonProp = {
         color: "light",
@@ -15,12 +17,29 @@
     };
 </script>
 
+<svelte:window
+    on:click={(e) => {
+        if (e.target !== menuElement) {
+            isMenuOpen = false;
+        }
+    }}
+/>
+
 <div class="relative">
-    <EtButton {...buttonProps} on:click={() => (isMenuOpen = !isMenuOpen)}>
+    <EtButton
+        {...buttonProps}
+        on:click={(e) => {
+            e.stopPropagation();
+            isMenuOpen = !isMenuOpen;
+        }}
+    >
         <slot />
     </EtButton>
     {#if isMenuOpen && options.length}
-        <div class="absolute border min-w-32 right-0 rounded-xl overflow-auto">
+        <div
+            bind:this={menuElement}
+            class="absolute border min-w-32 right-0 rounded-xl overflow-auto"
+        >
             {#each options as o, i (i)}
                 <EtButton
                     className="text-start hover:bg-gray-100 px-4"

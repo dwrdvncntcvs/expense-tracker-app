@@ -8,7 +8,7 @@
     $: widthClass = {
         xs: "w-[800px]",
         sm: "w-[800px]",
-        md: "w-[1000px]",
+        md: "md:w-[1000px] sm:w-full",
         lg: "w-[1200px]",
         xl: "w-[1400px]",
         full: "w-full",
