@@ -24,16 +24,6 @@ type InputType =
     | "text"
     | "time";
 
-type Color =
-    | "primary"
-    | "secondary"
-    | "tertiary"
-    | "quaternary"
-    | "light"
-    | "success"
-    | "warning"
-    | "failure";
-
 type ButtonType = "button" | "submit";
 
 type Color =

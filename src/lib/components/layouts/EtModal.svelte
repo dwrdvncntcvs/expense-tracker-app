@@ -54,7 +54,9 @@
     >
         <div class="p-4 flex flex-col gap-4 rounded-xl bg-white h-full w-full">
             <div class="flex justify-between items-center">
-                <EtText fontWeight="bold" size="lg">{title ?? ""}</EtText>
+                <EtText fontWeight="bold" color="primary" size="lg"
+                    >{title ?? ""}</EtText
+                >
                 <EtButton
                     width="none"
                     color="light"
