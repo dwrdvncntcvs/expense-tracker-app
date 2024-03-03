@@ -8,6 +8,7 @@
     import { setUser } from "$lib/states/user";
     import endpoint, { request } from "$lib/utils/api";
     import { onMount } from "svelte";
+    import EtAddExpenseModal from "$lib/components/organisms/modals/ETAddExpenseModal.svelte";
 
     onMount(async () => {
         const response = await request.get(
@@ -27,12 +28,5 @@
         <slot />
     </EtContent>
     <EtCreateExpenseButton />
-    <EtModal
-        name="add-expense-modal"
-        title="Add Expense"
-        position="end"
-        dimension={{ height: "full", width: "sm" }}
-    >
-        Hello
-    </EtModal>
+    <EtAddExpenseModal />
 </EtContent>

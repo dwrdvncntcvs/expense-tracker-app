@@ -4,6 +4,7 @@
     export let size: Size = "sm";
     export let fontWeight: FontWeight = "normal";
     export let color: Color = "normal";
+    export let className: string = "";
 
     $: sizeClass = {
         sm: "text-sm",
@@ -37,6 +38,10 @@
     };
 </script>
 
-<p class="{sizeClass[size]} {fontWeightClass[fontWeight]} {colorClass[color]}">
+<p
+    class="{sizeClass[size]} {fontWeightClass[fontWeight]} {colorClass[
+        color
+    ]} {className}"
+>
     <slot />
 </p>

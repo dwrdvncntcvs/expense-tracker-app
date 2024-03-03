@@ -41,7 +41,7 @@
         tertiary: "bg-tertiary text-white hover:bg-tertiary/90",
         quaternary: "bg-quaternary text-black hover:bg-quaternary/90",
         success: "bg-success text-black hover:bg-success/90",
-        failure: "bg-failure text-white hover:bg-primary/90",
+        failure: "bg-failure text-white hover:bg-failure/90",
         light: "text-primary",
     } as ColorClass;
 
