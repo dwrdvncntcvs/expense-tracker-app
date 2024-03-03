@@ -54,6 +54,13 @@ type ButtonRound = Size | "xxl" | "xxxl" | "full";
 
 type Width = Size | "full" | "none";
 
+interface Dimension {
+    width: Width;
+    height: Width;
+}
+
+type Position = "start" | "center" | "end";
+
 export {
     Column,
     Size,
@@ -63,4 +70,6 @@ export {
     ColorClass,
     Width,
     ButtonRound,
+    Dimension,
+    Position,
 };

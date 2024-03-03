@@ -5,6 +5,7 @@
     import EtGrid from "$lib/components/layouts/ETGrid.svelte";
     import EtGridItem from "$lib/components/layouts/ETGridItem.svelte";
     import EtGroupTextInput from "$lib/components/molecules/ETGroupTextInput.svelte";
+    import { request } from "$lib/utils/api";
     import { AtSymbol, Eye, EyeSlash, Key, User } from "svelte-hero-icons";
 
     let authData = {
@@ -17,8 +18,10 @@
 
     let shouldShowPassword = false;
 
-    const handleAuthAction = () => {
+    const handleAuthAction = async () => {
         console.log("Auth Data: ", authData);
+        const data = await request.post("/users/sign-up", authData);
+        console.log("Data: ", data);
     };
 </script>
 

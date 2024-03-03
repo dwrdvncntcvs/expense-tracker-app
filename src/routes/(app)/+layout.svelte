@@ -1,5 +1,6 @@
 <script>
     import EtContent from "$lib/components/layouts/EtContent.svelte";
+    import EtModal from "$lib/components/layouts/EtModal.svelte";
     import EtCreateExpenseButton from "$lib/components/organisms/ETCreateExpenseButton.svelte";
     import EtNavigation from "$lib/components/organisms/EtNavigation.svelte";
 
@@ -12,4 +13,5 @@
         <slot />
     </EtContent>
     <EtCreateExpenseButton />
+    <EtModal />
 </EtContent>

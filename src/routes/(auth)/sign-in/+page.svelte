@@ -1,7 +1,10 @@
 <script>
+    import { goto } from "$app/navigation";
     import EtButton from "$lib/components/atoms/EtButton.svelte";
     import EtIcon from "$lib/components/atoms/EtIcon.svelte";
     import EtGroupTextInput from "$lib/components/molecules/ETGroupTextInput.svelte";
+    import { setUser } from "$lib/states/user";
+    import { request } from "$lib/utils/api";
     import { AtSymbol, Eye, EyeSlash, Key } from "svelte-hero-icons";
 
     let authData = {
@@ -11,8 +14,19 @@
 
     let shouldShowPassword = false;
 
-    const handleAuthAction = () => {
-        console.log("Auth Data: ", authData);
+    const handleAuthAction = async () => {
+        const data = await request.post("/users/sign-in", authData);
+
+        if (data.ok) {
+            setUser(data.data);
+            authData = {
+                email: "",
+                password: "",
+            };
+            goto("/");
+        } else {
+            console.log(data.data.message);
+        }
     };
 </script>
 
