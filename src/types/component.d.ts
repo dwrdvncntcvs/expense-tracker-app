@@ -44,7 +44,8 @@ type Color =
     | "success"
     | "failure"
     | "warning"
-    | "light";
+    | "light"
+    | "normal"
 
 interface ColorClass {
     [key: string]: string;
@@ -61,6 +62,8 @@ interface Dimension {
 
 type Position = "start" | "center" | "end";
 
+type FontWeight = "extralight" | "light" | "thin" | "normal" | "medium" | "semibold" | "bold" | "extrabold"
+
 export {
     Column,
     Size,
@@ -72,4 +75,5 @@ export {
     ButtonRound,
     Dimension,
     Position,
+    FontWeight
 };

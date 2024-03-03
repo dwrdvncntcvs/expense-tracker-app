@@ -29,6 +29,7 @@
     <EtCreateExpenseButton />
     <EtModal
         name="add-expense-modal"
+        title="Add Expense"
         position="end"
         dimension={{ height: "full", width: "sm" }}
     >

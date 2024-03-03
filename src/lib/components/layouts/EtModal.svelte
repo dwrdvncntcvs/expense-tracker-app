@@ -1,8 +1,13 @@
 <script lang="ts">
     import type { Dimension, Position } from "../../../types/component";
     import { modal, removeModal } from "$lib/states/modal";
+    import EtButton from "../atoms/EtButton.svelte";
+    import EtIcon from "../atoms/EtIcon.svelte";
+    import { XMark } from "svelte-hero-icons";
+    import EtText from "../atoms/ETText.svelte";
 
     export let name: string | null = null;
+    export let title: string | null = null;
     export let position: Position = "center";
     export let dimension: Dimension = {
         width: "xs",
@@ -47,7 +52,19 @@
             dimension.height
         ]} {positionClass[position]} {dimensionWidthClass[dimension.width]}"
     >
-        <div class="p-4 rounded-xl bg-white h-full w-full">
+        <div class="p-4 flex flex-col gap-4 rounded-xl bg-white h-full w-full">
+            <div class="flex justify-between items-center">
+                <EtText fontWeight="bold" size="lg">{title ?? ""}</EtText>
+                <EtButton
+                    width="none"
+                    color="light"
+                    className="hover:bg-primary/10"
+                    round="full"
+                    on:click={removeModal}
+                >
+                    <EtIcon src={XMark} dimension="sm" color="primary" />
+                </EtButton>
+            </div>
             <slot />
         </div>
     </div>
