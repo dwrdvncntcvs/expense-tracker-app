@@ -1,17 +1,16 @@
 <script lang="ts">
+    import EtText from "$lib/components/atoms/ETText.svelte";
     import EtTextInput from "$lib/components/atoms/ETTextInput.svelte";
     import EtTextarea from "$lib/components/atoms/ETTextarea.svelte";
+    import EtButton from "$lib/components/atoms/EtButton.svelte";
     import EtFormControl from "$lib/components/layouts/ETFormControl.svelte";
     import EtGrid from "$lib/components/layouts/ETGrid.svelte";
     import EtGridItem from "$lib/components/layouts/ETGridItem.svelte";
     import EtModal from "$lib/components/layouts/EtModal.svelte";
     import EtGroupTextInput from "$lib/components/molecules/ETGroupTextInput.svelte";
     import EtSelect from "$lib/components/molecules/EtSelect.svelte";
-    import EtText from "$lib/components/atoms/ETText.svelte";
-    import EtAddImage from "../ETAddImage.svelte";
     import { categories } from "$lib/states/category";
-    import type { SelectOption } from "../../../../types/component";
-    import EtButton from "$lib/components/atoms/EtButton.svelte";
+    import EtAddImage from "../ETAddImage.svelte";
 
     $: categoryOptions = $categories.map((category) => ({
         value: category?.id,

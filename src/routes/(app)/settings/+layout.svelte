@@ -120,7 +120,7 @@
         </ul>
     </nav>
 
-    <EtContent size="full" hasGap>
+    <EtContent size="full" hasGap hasPadding>
         <slot />
     </EtContent>
 </div>
