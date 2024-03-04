@@ -56,6 +56,16 @@ type Position = "start" | "center" | "end";
 
 type FontWeight = "extralight" | "light" | "thin" | "normal" | "medium" | "semibold" | "bold" | "extrabold"
 
+type Height = Size
+
+interface SelectOption {
+    value: string
+    label: string
+}
+
+type Round = "left" | "right" | "none" | "both";
+
+
 export {
     Column,
     Size,
@@ -68,5 +78,8 @@ export {
     Dimension,
     Position,
     FontWeight,
-    TextSize
+    TextSize,
+    Height,
+    SelectOption,
+    Round
 };

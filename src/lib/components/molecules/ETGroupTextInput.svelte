@@ -21,12 +21,11 @@
 </script>
 
 <div class="flex bg-inherit border rounded-lg w-full">
-    <div class="flex items-center px-2">
+    <div class="flex items-center px-4">
         <slot />
     </div>
     <EtTextInput
         hasBorder={false}
-        isRounded={false}
         bind:value
         {placeholder}
         {id}

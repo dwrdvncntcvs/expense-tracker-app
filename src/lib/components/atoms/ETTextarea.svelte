@@ -8,9 +8,7 @@
     export let id = "";
     export let round: Round = "both";
     export let hasBorder = true;
-    export let disabled = false;
-    export let isCaretDisabled = false;
-    export let className = "";
+    export let height: Height = "xs";
 
     $: roundClass = {
         left: "rounded-l-lg",
@@ -18,23 +16,26 @@
         none: "rounded-none",
         both: "rounded-lg",
     };
+
+    $: heightClass = {
+        xs: "h-10",
+        sm: "h-14",
+        md: "h-20",
+        lg: "h-26",
+        xl: "h-40",
+    };
 </script>
 
-<input
+<textarea
     {placeholder}
     bind:value
     {id}
     {name}
     {...{ type }}
-    class="{hasBorder ? 'border' : ''} {isCaretDisabled
-        ? 'caret-transparent'
-        : ''} text-sm w-full p-1 px-2 h-10 {roundClass[
+    class="{hasBorder ? 'border' : ''} {heightClass[
+        height
+    ]} text-sm w-full p-1 px-2 {roundClass[
         round
-    ]} focus:outline focus:outline-primary outline-2 text-primary {className}"
+    ]} focus:outline focus:outline-primary outline-2 text-primary resize-none"
     on:input
-    on:focus
-    on:blur
-    on:click
-    on:keydown
-    {disabled}
 />

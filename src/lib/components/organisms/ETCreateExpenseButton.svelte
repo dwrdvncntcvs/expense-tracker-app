@@ -1,8 +1,8 @@
 <script>
+    import { addModal } from "$lib/states/modal";
     import { Plus } from "svelte-hero-icons";
     import EtButton from "../atoms/EtButton.svelte";
     import EtIcon from "../atoms/EtIcon.svelte";
-    import { addModal } from "$lib/states/modal";
 </script>
 
 <div class="fixed right-20 bottom-10">

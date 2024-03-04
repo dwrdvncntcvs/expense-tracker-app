@@ -28,9 +28,7 @@
         };
 
         await checkAuth();
-        if ($isAuthenticated) {
-            await getCategoriesData();
-        }
+        await getCategoriesData();
     });
 
     const pagesShouldNotHaveCreateExpense = ["settings"];
