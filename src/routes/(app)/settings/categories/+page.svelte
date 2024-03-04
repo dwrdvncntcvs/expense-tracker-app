@@ -6,12 +6,10 @@
     import {
         addCategory,
         categories,
-        removeCategory,
-        setCategories,
+        removeCategory
     } from "$lib/states/category";
     import { user } from "$lib/states/user";
     import endpoint, { request } from "$lib/utils/api";
-    import { onMount } from "svelte";
     import { ListBullet, Plus, Tag, Trash } from "svelte-hero-icons";
     import type { CreateCategory } from "../../../../types/category";
 
@@ -19,16 +17,6 @@
         name: "",
         userId: "",
     };
-
-    onMount(() => {
-        const getData = async () => {
-            const response = await request.get(endpoint.categoriesEndpoint(""));
-            const categories = response.data.data;
-            setCategories(categories);
-        };
-
-        getData();
-    });
 
     const addCategoryAction = async () => {
         const data = { ...createCategoryData, userId: $user?.id };

@@ -4,10 +4,11 @@
     import EtNavigation from "$lib/components/organisms/EtNavigation.svelte";
     import { goto } from "$app/navigation";
     import EtAddExpenseModal from "$lib/components/organisms/modals/ETAddExpenseModal.svelte";
-    import { setUser } from "$lib/states/user";
+    import { isAuthenticated, setUser } from "$lib/states/user";
     import endpoint, { request } from "$lib/utils/api";
     import { onMount } from "svelte";
     import { page } from "$app/stores";
+    import { setCategories } from "$lib/states/category";
 
     onMount(async () => {
         const checkAuth = async () => {
@@ -20,7 +21,16 @@
             if (!response.ok) goto("/sign-in");
         };
 
+        const getCategoriesData = async () => {
+            const response = await request.get(endpoint.categoriesEndpoint(""));
+            const categories = response.data.data;
+            setCategories(categories);
+        };
+
         await checkAuth();
+        if ($isAuthenticated) {
+            await getCategoriesData();
+        }
     });
 
     const pagesShouldNotHaveCreateExpense = ["settings"];
