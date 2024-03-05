@@ -126,13 +126,15 @@
 
         <!-- Continue this pattern for the rest of the month -->
     </div>
-    <EtButton
-        round="lg"
-        color="secondary"
-        padding="sm"
-        fontSize="sm"
-        on:click={() => {
-            value = "";
-        }}>Clear</EtButton
-    >
+    {#if value}
+        <EtButton
+            round="lg"
+            color="secondary"
+            padding="sm"
+            fontSize="sm"
+            on:click={() => {
+                value = "";
+            }}>Clear</EtButton
+        >
+    {/if}
 </div>
