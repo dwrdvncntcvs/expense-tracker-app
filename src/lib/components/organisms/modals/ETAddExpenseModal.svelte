@@ -37,21 +37,21 @@
             price: "",
         };
     };
+
+    const submitExpense = () => {
+        console.log("Create Expense: ", createExpenseData);
+        clearCreateExpenseData();
+    };
 </script>
 
 <EtModal
     name="add-expense-modal"
     title="Add Expense"
     position="end"
+    close={clearCreateExpenseData}
     dimension={{ height: "full", width: "sm" }}
 >
-    <form
-        class="flex flex-col gap-4"
-        on:submit|preventDefault={() => {
-            console.log("Create Expense: ", createExpenseData);
-            clearCreateExpenseData();
-        }}
-    >
+    <form class="flex flex-col gap-4" on:submit|preventDefault={submitExpense}>
         <EtGrid col="2">
             <EtGridItem col="2">
                 <EtAddImage bind:imageUrl={createExpenseData["imageUrl"]} />

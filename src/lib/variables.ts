@@ -7,5 +7,6 @@ export const textColors = {
     success: "text-success",
     warning: "text-warning",
     failure: "text-failure",
-    normal: "text-black/80"
+    normal: "text-black/80",
+    none: ""
 };

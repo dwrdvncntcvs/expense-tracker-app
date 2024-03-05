@@ -13,6 +13,7 @@
         width: "xs",
         height: "full",
     };
+    export let close: () => void = () => {};
 
     $: positionClass = {
         start: "top-0 left-0",
@@ -45,7 +46,9 @@
     <button
         class="w-screen h-full bg-black/10 fixed z-50 top-0 left-0"
         type="button"
-        on:click={removeModal}
+        on:click={() => {
+            removeModal(close);
+        }}
     />
     <div
         class="p-4 fixed z-50 {dimensionHeightClass[
@@ -62,7 +65,9 @@
                     color="light"
                     className="hover:bg-primary/10"
                     round="full"
-                    on:click={removeModal}
+                    on:click={() => {
+                        removeModal(close);
+                    }}
                 >
                     <EtIcon src={XMark} dimension="sm" color="primary" />
                 </EtButton>

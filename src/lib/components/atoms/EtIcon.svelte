@@ -10,6 +10,7 @@
     export let size = "";
     export let dimension: IconDimension = "default";
     export let solid = false;
+    export let className = "";
 
     export let color: Color = "primary";
 
@@ -23,6 +24,6 @@
 <Icon
     {src}
     {size}
-    class="{dimensionClass[dimension]} {textColors[color]}"
+    class="{dimensionClass[dimension]} {textColors[color]} {className}"
     {solid}
 />

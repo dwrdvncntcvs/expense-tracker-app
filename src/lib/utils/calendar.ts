@@ -36,6 +36,14 @@ const MONTHS = {
 export const weekDaysName = Object.keys(WEEK_DAYS)
 export const monthsName = Object.keys(MONTHS)
 
+export const getCurrentMonth = () => {
+    return new Date().getMonth()
+}
+
+export const getCurrentYear = () => {
+    return new Date().getFullYear()
+}
+
 export const getWeekDaysName = (options?: { nameLength?: number }) => {
     if (options?.nameLength)
         return weekDaysName.map(val => val.slice(0, options.nameLength))

@@ -38,6 +38,7 @@ type Color =
     | "warning"
     | "light"
     | "normal"
+    | "none"
 
 interface ColorClass {
     [key: string]: string;

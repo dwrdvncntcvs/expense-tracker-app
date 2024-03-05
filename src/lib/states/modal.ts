@@ -14,6 +14,7 @@ export const addModal = (name: string, props: any) => {
     modal.set({ name, props })
 }
 
-export const removeModal = () => {
+export const removeModal = (cb: () => void) => {
+    cb()
     modal.set({ name: "", props: {} })
 }
