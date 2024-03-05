@@ -57,9 +57,10 @@
             <button
                 type="button"
                 id={date.dateStr}
-                class="p-2 text-inherit hover:bg-primary/10 rounded-lg {cols[
-                    date.day
-                ]}"
+                class="p-2 text-inherit hover:bg-primary/10 rounded-lg {value ===
+                parseDate(parseJsonDate(date))
+                    ? 'bg-secondary text-white pointer-events-none'
+                    : ''} {cols[date.day]}"
                 on:click={() => {
                     value = parseDate(parseJsonDate(date));
                 }}>{date.date}</button
