@@ -32,13 +32,24 @@
 
 {#if !imageUrl}
     <button
-        class="flex border-2 rounded-xl border-black border-dashed w-full h-36 items-center justify-center"
+        type="button"
+        class="flex border-2 rounded-xl border-dashed w-full h-36 items-center justify-center"
         on:click={() => {
             fileInput?.click();
         }}
     >
-        <EtIcon src={Plus} dimension="lg" color="light" />
-        <EtIcon src={Photo} dimension="lg" color="light" />
+        <EtIcon
+            src={Plus}
+            dimension="lg"
+            color="none"
+            className="text-gray-500"
+        />
+        <EtIcon
+            src={Photo}
+            dimension="lg"
+            color="none"
+            className="text-gray-500"
+        />
     </button>
 {:else}
     <div
