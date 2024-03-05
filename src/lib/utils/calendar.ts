@@ -52,7 +52,11 @@ export const getWeekDaysName = (options?: { nameLength?: number }) => {
 }
 
 export const parseDate = (date: Date) => {
-    return `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`
+    const month = date.getMonth() + 1
+    const currDate = date.getDate()
+    const year = date.getFullYear()
+
+    return `${year}-${month < 19 ? `0${month}` : month}-${currDate < 10 ? `0${currDate}` : currDate}`
 }
 
 export const generateJsonDate = (date: Date): JsonDate => {
