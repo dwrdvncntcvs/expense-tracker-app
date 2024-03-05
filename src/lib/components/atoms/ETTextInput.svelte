@@ -36,5 +36,6 @@
     on:blur
     on:click
     on:keydown
+    autocomplete="off"
     {disabled}
 />

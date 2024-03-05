@@ -7,6 +7,7 @@
     import EtGrid from "$lib/components/layouts/ETGrid.svelte";
     import EtGridItem from "$lib/components/layouts/ETGridItem.svelte";
     import EtModal from "$lib/components/layouts/EtModal.svelte";
+    import EtCalendarInput from "$lib/components/molecules/ETCalendarInput.svelte";
     import EtGroupTextInput from "$lib/components/molecules/ETGroupTextInput.svelte";
     import EtSelect from "$lib/components/molecules/EtSelect.svelte";
     import { categories } from "$lib/states/category";
@@ -86,7 +87,7 @@
             </EtGridItem>
             <EtGridItem col="1">
                 <EtFormControl id="purchasedDate" label="Date of Purchase">
-                    <EtTextInput
+                    <EtCalendarInput
                         id="purchasedDate"
                         name="purchasedDate"
                         bind:value={createExpenseData["purchasedDate"]}
